@@ -90,6 +90,7 @@ class LogStash::Outputs::ElasticsearchHTTP < LogStash::Outputs::ElasticSearch
       @logger.warn("Ignoring the async replication option, this option is not recommended and not supported by this plugin")
     end
 
+    options["host"] = [[options['host']]]
     options["protocol"] = "http"
 
     super(options)
